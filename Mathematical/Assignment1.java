@@ -407,5 +407,6 @@ class Assignment1{
 		double s=(n*(2*a+((n-1)*d)))/2;
 		System.out.println("Sum of 28 terms: "+s);
 		//Output= 546
+		
 	}
 }
