@@ -1,0 +1,583 @@
+Q.1) What is Object-oriented? Write down difference b/w Object oriented and procedure oriented programming approach.
+Ans. Object-Oriented Programming is the style/approach of writing a program in which whole code lies around real-world entities. The main idea behind 		Object-oriented programmin is to bind data members and member functions together in order to increase data security.
+
+	Difference between Object-oriented and Procedural-oriented:
+	
+	1.* In Procedural-oriented, we use block of codes called function which performs a particular tasks, collections to so many functions result in building 		      an application.
+	   * Procedural-oriented programming follows top-down approach.
+	   
+	2.* In Object-oriented, we use real world entities also called as objects are used.
+	   * Object-oriented programming follows bottom-up approach.
+	   
+Q.2) What is class and object? Explain all oop features in java with example.
+Ans. There are total six features of java which are also known as pillar of object-oriented programming.
+	
+	This features are namely:
+	* Object   * Class   * Encapsulation   * Polymorphism   * Inheritance   * Abstraction
+	
+	1. Object- Object is a real world entity. Object may have certain number of properties and behaviours or may both. If a thing is a object it must be in 				existance. Object belongs to class. Object is runtime entity.
+			e.g. car, pen, etc.
+	
+	2. Class- Class is a user defined data type. Class is a collection of similar types of object. Class is a blueprint of object. Once we define a class then 			       we can create 'n' number of objects.
+		       e.g. Tata motors, cello, etc.
+			
+	3. Encapsulation- Wrapping of data and functions together into a single unit is called encapsulation. With the help of class we can achieve 					    encapsulation but at final stage it is object.
+				    e.g. bag, lunch-box, etc.
+				    
+	4. Polymorphism- One thing has many implementations is called polymorphism. it is of 2 types-
+				     * Early-binding(Compile-time polymorphism)   * Late-Binding(Run-time polymorphism)
+				     e.g. person(person can be student, teacher, husband, son, etc.), etc.
+				     
+	5. Inheritance- When one class aquire properties of another class is called Inheritance. Class from which properties are aquired is called super-class 				        (parent-class) and class aquiring properties is called sub-class(child-class). By using existing thing developing something new, but 			        there should not be any changes in existing one.
+				e.g. father's property, etc.
+				
+	6. Abstracion- Hiding unnecessary information from user and showing only essential details.Use the thing without knowing its background.
+			       e.g. fan, tubelight, etc.
+			       
+Q.3) What are the role of setter and getter method ? What is POJO In Java.
+Ans. POJO in Java stands for Plain Old Java Object. It is an ordinary object, which is not bound by any special restriction. The POJO file does not require 		any special classpath. It increases the readability & re-usability of a Java program.
+
+	POJOs are now widely accepted due to their easy maintenance.POJO class does not have any naming convention for properties andmethods.The 		term POJO was introduced by Martin Fowler ( An American software developer) in 2000. it is available in Java from the EJB 3.0 by sun microsystem.
+	
+	The Setters and Getters in POJO-
+	1. Setters: While Setter sets or updates the value (mutators). It sets the value for any variable used in a class’s programs. and starts with the word 				“set” followed by the variable name. 
+	
+	2. Getters: Getter returns the value (accessors), it returns the value of data type int, String, double, float, etc. For the program’s convenience, the 			 getter starts with the word “get” followed by the variable name.
+
+Q.4) How to update and retrive  the value of a particular property of an object from anothor class(Let suppose the property is private) ?
+Ans. import java.util.Scanner;
+	class Q4{
+		private int a;
+		private int b; 
+		public Q4(int a,int b){
+			this.a=a;
+			this.b=b;
+		}
+		public void setValueA(int i){
+			this.a=i;
+		}
+		public void setValueB(int j){
+			this.b=j;
+		}	
+		public void getA(){
+			System.out.println("A: "+a);
+		}
+		public void getB(){
+			System.out.println("B: "+b);
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			Q4 obj=new Q4(3,4);
+			Scanner scn=new Scanner(System.in);
+			System.out.print("Enter a: ");
+			int i=scn.nextInt();
+			obj.setValueA(i);
+			System.out.print("Enter b: ");
+			int j=scn.nextInt();
+			obj.setValueB(j);
+			obj.getA();
+			obj.getB();
+		}
+	}
+	
+Q.5) Create an Object having two properties and four behaviours
+	(add,substract,multiply,divide) to perform desired operation.object must have setter and getter and keep all properties private.	
+Ans. import java.util.Scanner;
+	class Q5{
+		private int a;
+		private int b; 
+		public Q5(int a,int b){
+			this.a=a;
+			this.b=b;
+		}
+		public void setValueA(int i){
+			this.a=i;
+		}
+		public void setValueB(int j){
+			this.b=j;
+		}	
+		public void getA(){
+			System.out.println("A: "+a);
+		}
+		public void getB(){
+			System.out.println("B: "+b);
+		}
+		public int add(){
+			return a+b;
+		}
+		public int substract(){
+			return a-b;	
+		}
+		public int multiply(){
+			return a*b;
+		}
+		public int divide(){
+			return a/b;
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			Q5 obj=new Q5(3,4);
+			Scanner scn=new Scanner(System.in);
+			System.out.print("Enter a: ");
+			int i=scn.nextInt();
+			obj.setValueA(i);
+			System.out.print("Enter b: ");
+			int j=scn.nextInt();
+			obj.setValueB(j);
+			obj.getA();
+			obj.getB();
+			System.out.println("Add: "+obj.add());
+			System.out.println("Substract: "+obj.substract());
+			System.out.println("Multiply: "+obj.multiply());
+			System.out.println("Divide: "+obj.divide());		
+		}
+	}
+	
+Q.6) What is Constructor? List down the keypoints about constructor.
+Ans. Constructoris used to initialize the object at the time of object creation.Constructor is a special member of class beacause of the following reason:
+	 1. Name of constructor is same as that of class.
+	 2. There is no return type of constructor.
+	 3. Constructor is called automatically when object is created.
+	 4. Constructor cannot be static.
+	 
+	 Constructor is of two types:
+	 1.Default Constructor- Constructor without argument/parameter.
+	 2.Paramatric Constructor- Constructor with parameters.
+	 
+Q.7) Can we make multiple contructor inside a class? if yes then what is the need of it.Explain.
+Ans. Yes, we can use multiple constructor inside a class,i.e., concept of constructor overloading. We do constructor overloading beacause,
+	 1.Different constructors allow you to initialize objects in different ways based on the parameters  passed during object creation. This gives flexibility to the users of your class to choose how they want to initialize an object depending on their needs.
+	 2.You can provide default values for some or all of the constructor parameters as per condition requirement.
+	 3.By overloading constructors, you can reuse initialization logic.
+	 
+Q.8) Private constuctor is legal or illegal?
+Ans. In Java, having a private constructor is legal and serves a specific purpose.
+	 1. When you declare a constructor as private, it means only the methods within the same class can call that constructor. This restricts the creation of instances of the class from outside the class itself.
+	 2.One common use of a private constructor is in implementing the Singleton design pattern.
+	 3.Sometimes classes are desined to only contain static members and functions, making constructor private prevents accidental instantiation of such classes.
+	 
+Q.9) What is Singleton class explain with suitable example?
+Ans. A Singleton class in Java is a class that allows only one instance of itself to be created and provides a global point of access to that instance. It is useful when you want to make only one instance of your class throught the apllication life-cycle.
+	 Characteristics of Singleton Class:
+	 1.The class has a private constructor to prevent other classes from directly creating instances of the Singleton.
+	 2.It contains a static variable that holds the single instance of the class.
+	 3.It provides a static method that allows other classes to get the instance of the Singleton.
+	 
+	class Singleton{
+		private static Singleton instance;
+		private Singleton() {
+       
+		}
+		public static Singleton getInstance(){
+			if (instance == null) {
+				instance = new Singleton();
+			}
+			return instance;
+		}
+	}
+	public class TestMain{
+		public static void main(String[] args) {
+			Singleton singletonInstance1 = Singleton.getInstance();
+			Singleton singletonInstance2 = Singleton.getInstance();
+			System.out.println(singletonInstance1 == singletonInstance2);
+		}
+	}
+
+
+	 
+Q.10) What is method overloading ? What are importance of method overloading ? Can we overload the main method in java?
+Ans. Method overloading in Java refers to the ability to define multiple methods within the same class that share the same name but have different parameters. The compiler differntiate between them based on their number of parameters, types of parameters, or order of parameters.
+	 Importance of Method Overloading:
+	 1.Method overloading allows you to use the same method name for similar operations, making the code more readable and intuitive.
+	 2.It provides flexibility by allowing methods to accept different types or numbers of parameters, catering to different use cases without needing different method names.
+	 3.You can reuse the method name and logic for similar operations, reducing code duplication and promoting efficient code maintenance.
+	 4.Using method overloading promotes consistency in your code by enforcing a clear and predictable way to handle related tasks.
+	 
+	 Yes, you can overload the main method in Java. However, only the standard public static void main(String[] args) method with a single parameter of type String[] is recognized as the entry point of a Java application by the Java Virtual Machine(JVM).
+	 
+Q.11) How to pass as many argument to java method?
+Ans. In Java, you can pass as many arguments to a method as needed using varargs(variable-length arguments) or by passing an array of parameters.
+	  1.vararg- Varargs allow you to pass a variable number of arguments to a method. 
+				syntax- public void method_name(int... a);
+	  2.array- If varargs are not suitable or if you need to pass arguments of different types or specify them individually, you can pass an array of parameters.
+	  
+	  *Varargs are convenient when the number of arguments can vary, and you want to pass them directly without explicitly creating an array.
+	  *Arrays are useful when you have a fixed number of arguments or when you need to pass arguments of different types.
+	  
+Q.12) Can we overload the method with var-arg type of argument?
+Ans. Yes, you can overload a method in Java where one of the overloaded methods has a varargs (variable-length arguments) parameter.
+	class Test{
+		public static void printValues(String... values) {
+			System.out.println("Printing values with varargs:");
+			for (String element: values) {
+				System.out.println(value);
+			}
+		}
+		public static void printValues(int num) {
+			System.out.println("Printing a single value: " + num);
+		}
+		public static void printValues(String value1, String value2) {
+			System.out.println("Printing two values: " + value1 + " and " + value2);
+		}
+		public static void main(String[] args) {
+			printValues("Hello", "World");
+			printValues(42);
+			printValues("Java", "is", "awesome");
+			printValues("Hello", "Java");
+		}
+	}
+
+Q.13) Create a class to calculate Area of circle with one data member to store the radius and another to store area value. Create method members
+	  init - to input radius from user
+	  calc - to calculate area
+	  display- to display area
+Ans. import java.util.Scanner;
+	class Q13{
+		private int r;
+		private double a;
+		public Q13(int r){
+			this.r=r;
+		}
+		public void setValueRadius(int i){
+			this.r=i;
+		}
+		public void calc(){
+			this.a=3.14*r*r;
+		}
+		public double display(){
+			return a;
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			Q13 obj=new Q13(5);
+			Scanner scn=new Scanner(System.in);
+			System.out.print("Enter radius: ");
+			int i=scn.nextInt();
+			obj.setValueRadius(i);
+			obj.calc();
+			System.out.println("Area: "+obj.display());	
+		}
+	}
+	
+Q.14) Create a class MathOperation with two data member X and Y to store the operand and third data member R to store result of operation.Create 		  method members
+	  init - to input X and Y from user
+	  add - to add X and Y and store in R
+	  multiply - to multiply X and Y and store in R
+	  power - to calculate X Y and store in R
+	  display- to display Result R
+Ans. import java.util.Scanner;
+	class Q14{
+		private double x;
+		private double y; 
+		private double r;
+		public Q14(double x,double y){
+			this.x=x;
+			this.y=y;
+		}
+		public void setValueX(double i){
+			this.x=i;
+		}
+		public void setValueY(double j){
+			this.y=j;
+		}	
+		public double add(){
+			this.r=x+y;
+			return r;
+		}
+		public double power(){
+			this.r=Math.pow(x,y);
+			return r;
+		}
+		public double multiply(){
+			this.r=x*y;
+			return r;
+		}
+		public void display(){
+			System.out.println("Sum: "+add());
+			System.out.println("Multiply: "+multiply());
+			System.out.println("Power: "power());
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			Q14 obj=new Q14(3,4);
+			Scanner scn=new Scanner(System.in);
+			System.out.print("Enter x: ");
+			double i=scn.nextInt();
+			obj.setValueX(i);
+			System.out.print("Enter y: ");
+			double j=scn.nextInt();
+			obj.setValueY(j);
+			obj.display();		
+		}
+	}
+
+Q.15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
+	  two integers
+	  three float
+	  all elements of array
+	  one double and one integer
+Ans. class Q15{
+		public int multiply(int x ,int y){
+			int r = x*y;
+			return r;
+		}
+		public float multiply(float x ,float y, float z){
+			float r = x*y*z;
+			return r;
+		}
+		public int multiply(int... x){
+			int r = 1;
+			for(int i : x){
+				r *= i;
+			}
+			return r;
+		}
+		public double multiply(double x, double y, int z){
+			double r;
+			r = x*y*z;
+			return r;
+		}
+
+	}
+	class TestMain{
+			public static void main(String args[]){
+			Q15 obj = Q15();
+			System.out.println(obj.multiply(2,3));
+			System.out.println(obj.multiply(2.1f,3.1f,2.2f));
+			System.out.println(obj.multiply(1,3,5,2));
+			System.out.println(obj.multiply(2.45,3.21,4));
+		}
+	}
+
+Q.16) Create a class Person with properties (name and age) with following features.
+	  Default age of person should be 18.
+	  A person object can be initialized with name and age.
+	  Method to display name and age of person.
+Ans. import java.util.Scanner;
+	class Person{
+		private String name;
+		private int age;
+		public Person(){
+			name = "null";
+			age = 18;
+		}
+		public void setData(String name ,int age){
+			this.name = name;
+			this.age = age;
+		}
+		public void display(){
+			System.out.println(name+" "+age);
+		}
+	}
+	class TestMain{
+		public static void main(String args[]){
+		String n;
+		int x;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your name : ");
+		n = sc.nextLine();
+		System.out.println("Enter your age : ");
+		x = sc.nextInt();
+		Person obj = new Person();
+		obj.setData(n,x);
+		obj.display();
+	}
+
+}
+
+Q.17) Create a class Employee with(empNo ,salary and totalSalary)  with following 	features.
+	  Only parameterized constructor;
+	  totalSalary always represent total of all the salaries of all employees created.
+	  empNo should be auto incremented.
+	  display total employees and totalSalary using class method.	
+Ans. class Employee{
+		private static int empNo = 0 , totalSalary = 0;
+		public Employee(int emNo ,int salary){
+			empNo++;
+			totalSalary += salary;
+		}
+		public static void display(){
+			System.out.println("Total Employee = "+ empNo+"\n"+"Total salary = "+totalSalary);
+		}
+	}
+	class TestMain{
+		public static void main(String args[]){
+			Q17 a,c,b,d;
+			a = new Q17(1,40000);
+			b = new Q17(2,60000);
+			c = new Q17(3,50000);
+			d = new Q17(4,44000);
+			Employee.display();
+		}
+	}
+	
+Q.18) Create class Product (pid, price, quantity) with parameterized constructor.Create a main function in different class (say XYZ) and perform following 		  task:
+	  Accept five product information from user and store in an array
+	  Find Pid of product with highest price.
+	  Create method (with array of product’s object as argument) in XYZ class to calculate and return total amount spent on all products. (amount spent 		  on single product=price of product * quantity of product).
+Ans. import java.util.Scanner;
+	class Q18{
+		private int pid[]=new int[5];
+		private int prize[]=new int[5]; 
+		private int quantity[]=new int[5];
+		
+		public Q18(int pid[],int prize[],int quantity[]){
+			for(int i=0;i<5;i++){
+				this.pid[i]=pid[i];
+				this.prize[i]=prize[i];
+				this.quantity[i]=quantity[i];
+			}
+		}
+		public int maxId(){
+			int maxPrize=this.prize[0];
+			int maxId=this.pid[0];
+			for(int i=0;i<5;i++){
+					if(maxPrize<prize[i]){
+						maxPrize=prize[i];
+						maxId=pid[i];
+					}
+			}
+			return maxId;
+		}
+		public int totalPrize(){
+			int total=0;
+			for(int i=0;i<5;i++){
+				total+=(quantity[i]*prize[i]);
+			}
+			return total;
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			int pid[]={1,2,3,4,5};
+			int prize[]={40,60,55,30,45};
+			int quantity[]={5,3,7,2,4};
+			Q18 obj=new Q18(pid,prize,quantity);
+			System.out.println("MaxId: "+obj.maxId());
+			System.out.println("Total Price: "+obj.totalPrize());
+		}
+	}
+	
+Q.19) Make list of Students having name, roll no., age, score. Write a program to accept 10 students record and arrange the Students based on the score 		  group [0-50], [50-65],[65-80],[80-100].
+Ans. import java.util.Scanner;
+	class Q19{
+		private int id[]=new int[10];
+		private String name[]=new String[10]; 
+		private int age[]=new int[10];
+		private int score[]=new int[10];
+		public Q19(int id[],String name[],int age[],int score[]){
+			for(int i=0;i<10;i++){
+				this.id[i]=id[i];
+				this.name[i]=name[i];
+				this.age[i]=age[i];
+				this.score[i]=score[i];
+			}
+		}
+		public void display1(){
+			for(int i=0;i<10;i++){
+				System.out.print(id[i]+" | "+name[i]+" | "+age[i]+" | "+score[i]+"\n");
+			}
+		}
+		public void scoreSort(){
+			for(int i=0;i<10;i++){
+				for(int j=0;j<10;j++){
+					if(score[i]<=score[j]){
+						int temp=score[i];
+						score[i]=score[j];
+						score[j]=temp;
+						
+						temp=id[i];
+						id[i]=id[j];
+						id[j]=temp;
+						
+						temp=age[i];
+						age[i]=age[j];
+						age[j]=temp;
+						
+						String temp1=name[i];
+						name[i]=name[j];
+						name[j]=temp1;
+						
+					}
+				}
+			}
+		}
+		public void display2(){
+			for(int i=0;i<10;i++){
+				if(score[i]<=100 && score[i]>=90)
+				System.out.print(id[i]+" | "+name[i]+" | "+age[i]+" | "+score[i]+"\n");
+			}
+			System.out.println();
+			for(int i=0;i<10;i++){
+				if(score[i]<90 && score[i]>=65)
+				System.out.print(id[i]+" | "+name[i]+" | "+age[i]+" | "+score[i]+"\n");
+			}
+			System.out.println();
+			for(int i=0;i<10;i++){
+				if(score[i]<65 && score[i]>=50)
+				System.out.print(id[i]+" | "+name[i]+" | "+age[i]+" | "+score[i]+"\n");
+			}
+			System.out.println();
+			for(int i=0;i<10;i++){
+				if(score[i]<50 && score[i]>=0)
+				System.out.print(id[i]+" | "+name[i]+" | "+age[i]+" | "+score[i]+"\n");
+			}
+		}
+	}	
+	class TestMain{
+		public static void main(String args[]){
+			int id[]={1,2,3,4,5,6,7,8,9,10};
+			String name[]={"a","b","c","d","e","f","g","h","i","j"};
+			int age[]={18,18,17,21,22,19,20,20,17,18};
+			int score[]={90,56,67,43,55,98,28,15,69,40};
+			Q19 obj=new Q19(id,name,age,score);
+			obj.display1();
+			obj.scoreSort();
+			obj.display2();
+		}
+	}
+
+Q.20) Create class Tile to store the edge length of a square tile, and create another class Floor to 	store length and width of a rectangular floor. Add method totalTiles(Tile t) in Floor class with Tile as argument to calculate the whole number of tiles needed to cover the floor completely.
+Ans.import java.util.Scanner;
+	class Tile{
+		private int e;
+		public Tile(int e) {
+			this.e = e;
+		}
+		public int getEdge() {
+			return e;
+		}
+	}
+	class Floor{
+		private int l;
+		private int b;
+		public Floor(int l, int b) {
+			this.l = l;
+			this.b = b;
+		}
+		public int totalTiles(Tile tile) {
+			int tilesLength = this.l / tile.getEdge();
+			int tilesBredth = this.b / tile.getEdge();
+			int totalTiles = tilesLength * tilesBredth;
+			return totalTiles;
+		}
+	}
+	public class TestMain{
+		public static void main(String[] args) {
+			Scanner scn=new Scanner(System.in);
+			System.out.println("Enter edge: ");
+			int e=scn.nextInt();
+			Tile tile = new Tile(e);
+			System.out.println("Enter length: ");
+			int l=scn.nextInt();
+			System.out.println("Enter bredth:");
+			int b=scn.nextInt();
+			Floor floor = new Floor(l,b);
+			int numTiles = floor.totalTiles(tile);
+			System.out.println("Total number of tiles needed: " + numTiles);
+		}
+	}
