@@ -1,0 +1,24 @@
+Q.1) What is String in java? What do you mean by mutability and immutability?
+Ans. String is a built-in java class which is immutable.In Java, a string is a sequence of characters. It's a data type specifically designed to store text rather 		than numeric data. Strings are widely used in programming for tasks like storing user input, manipulating text, and representing data that is primarily 		textual.
+
+	Mutability: Mutability refers to whether an object's state (the data it holds) can be changed after it is created. If an object is mutable, it means you can 				 modify its contents (data) after it's been created.
+	
+	Immutability: Immutability means that once an object is created, its state cannot be changed. If an object is immutable, its state is fixed and cannot be 			     modified after it's been initialized.
+
+Q.2) What is diffenence b/w String , SrtingBuffer and StringBuilder? Explain with example.
+Ans. The main difference between String, StringBuffer and StringBuilder is-
+	1. String class is immutable.
+	2. StringBuffer class is mutable and thread-safe.
+	3. StringBuilder class is mutable but not thread-safe.
+	
+Q.3) What is difference b/w == operator and String class equals() method?
+Ans. Difference between == operator and equals() method is that:
+	1. == operator- this checks the location of the string objects, if location of string objects is same then only it will return true.
+	2. equals() function- this checks if the content of both string object is same or not, if content is same it will return true.
+
+Q.4) How many ways to initialize String in java? Explain role of String literal pool.
+Ans. There are two ways to initialize String in java:
+	1. String object- by creating string object we can initialize String.
+				String str=new String("Hello");
+	2. String literals- by defining string literals we can initialize String.
+				String  str="Hello";
