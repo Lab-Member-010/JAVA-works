@@ -1,0 +1,9 @@
+Que.2 What is Serialization ? Write a java program to store the object into the file.
+Ans: Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process where the byte stream is used 		to recreate the actual Java object in memory. This mechanism is used to persist the object. The byte stream created is platform independent. So, the 		object serialized on one platform can be deserialized on a different platform. To make a Java object serializable we implement the java.io.Serializable 		interface. The ObjectOutputStream class contains writeObject() method for serializing an Object. The ObjectInputStream class contains readObject() 		method for deserializing an object. Advantages of Serialization: 
+	1. To save/persist state of an object. 
+    	2. To travel an object across a network.
+
+	
+
+Que.3 Explain transient keyword in java with example.
+Ans: 
